@@ -1,7 +1,7 @@
 const hamburger = document.querySelector(".lines");
 const nav = document.querySelector("header");
 let pages = [];
-pages.push(document.querySelector(".images"));
+pages.push(document.querySelector(".home"));
 pages.push(document.querySelector(".events"));
 pages.push(document.querySelector(".about"));
 pages.push(document.querySelector(".contact"));
@@ -11,52 +11,45 @@ hamburger.addEventListener("click", () => {
 });
 
 document.querySelector("#home").addEventListener("click", () => {
-  pages.forEach(p => {
-    if (p.classList.contains("images")) {
-      p.classList.remove("display-none");
-    } else {
-      p.classList.add("display-none");
-    }
-  });
+  const home = document.querySelector(".home").className.split(" ")[0];
+  ChangeContent(home);
   nav.classList.remove("open");
   HighlightNav(document.querySelector("#home").id);
 });
 
 document.querySelector("#events").addEventListener("click", () => {
-  pages.forEach(p => {
-    if (p.classList.contains("events")) {
-      p.classList.remove("display-none");
-    } else {
-      p.classList.add("display-none");
-    }
-  });
+  const events = document.querySelector(".events").className.split(" ")[0];
+  ChangeContent(events);
   nav.classList.remove("open");
   HighlightNav(document.querySelector("#events").id);
 });
 
 document.querySelector("#about").addEventListener("click", () => {
-  pages.forEach(p => {
-    if (p.classList.contains("about")) {
-      p.classList.remove("display-none");
-    } else {
-      p.classList.add("display-none");
-    }
-  });
+  const about = document.querySelector(".about").className.split(" ")[0];
+  ChangeContent(about);
   nav.classList.remove("open");
   HighlightNav(document.querySelector("#about").id);
 });
 
 document.querySelector("#contact").addEventListener("click", () => {
+  const contact = document.querySelector(".contact").className.split(" ")[0];
+  ChangeContent(contact);
+  nav.classList.remove("open");
+  HighlightNav(document.querySelector("#contact").id);
+});
+
+function ChangeContent(route) {
   pages.forEach(p => {
-    if (p.classList.contains("contact")) {
+    if (p.classList.contains(route)) {
       p.classList.remove("display-none");
     } else {
       p.classList.add("display-none");
     }
   });
-  nav.classList.remove("open");
-  HighlightNav(document.querySelector("#contact").id);
-});
+  if (route === "") {
+    document.querySelector(".home").classList.remove("display-none");
+  }
+}
 
 window.addEventListener("load", () => {
   const navLinks = document.querySelectorAll("li a");
@@ -78,10 +71,13 @@ function HighlightNav(route) {
       l.classList.add("fade");
     }
   });
+  if (route === "") {
+    document.querySelector("#home").classList.remove("fade");
+  }
 }
 
 window.addEventListener("hashchange", () => {
   const route = this.location.hash.substring(2).toLowerCase();
   HighlightNav(route);
-  console.log(route);
+  ChangeContent(route);
 });
