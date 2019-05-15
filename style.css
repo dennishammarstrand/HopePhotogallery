@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: sans-serif;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  max-width: 1000px;
+  display: flex;
+}
+
+.header-wrap {
+  width: 220px;
+  position: relative;
+  margin-right: 3em;
+}
+
+header {
+  text-align: right;
+  position: fixed;
+  top: 40%;
+}
+
+header h1 {
+  font-size: 2.5em;
+}
+
+header h4 {
+  font-weight: normal;
+  font-size: 1.1em;
+}
+
+ul {
+  list-style: none;
+  padding-top: 20px;
+}
+
+li {
+  padding: 5px 0;
+}
+
+ul a {
+  text-decoration: none;
+  color: black;
+}
+
+.icons {
+  padding-top: 20px;
+}
+
+.icons a {
+  text-decoration: none;
+  color: black;
+}
+
+.icons a:first-child {
+  padding-right: 0.5em;
+}
+
+.fade {
+  opacity: 0.3;
+}
+
+main {
+  width: 100%;
+}
+
+/*#region images*/
+
+.images {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  box-shadow: 0 0 15px 5px grey;
+  display: block;
+  margin-bottom: 5em;
+}
+
+/*#endregion images*/
+
+/*#region events*/
+
+.events img {
+  width: 400px;
+  float: right;
+  margin-left: 1em;
+}
+
+.event-text-1 {
+  line-height: 1.5em;
+  margin-bottom: 3em;
+}
+
+.event-text-1 h4 {
+  padding: 0.5em 0;
+}
+
+.event-text-2 {
+  line-height: 1.5em;
+  margin-bottom: 3em;
+}
+
+.facebook {
+  line-height: 1.5em;
+}
+
+.facebook a {
+  text-decoration: none;
+}
+
+.facebook a:hover {
+  text-decoration: underline;
+}
+
+/*#endregion events*/
+
+/*#region about*/
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about img {
+  border-radius: 50%;
+  width: 300px;
+}
+
+.text {
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.text h3 {
+  margin-bottom: 0.5em;
+}
+
+.text h5 {
+  margin-bottom: 2em;
+}
+
+.text p {
+  margin-bottom: 5em;
+}
+
+/*#endregion about*/
+
+/*#region contact*/
+
+.contact {
+  line-height: 1.5em;
+}
+
+.contact img {
+  margin-bottom: 1.5em;
+}
+
+.contact h2 {
+  margin-bottom: 1em;
+}
+
+.contact-text {
+  margin-bottom: 1em;
+}
+
+#contact-email {
+  margin-top: 1em;
+  margin-bottom: 5em;
+}
+
+/*#endregion contact*/
+
+/*#region footer*/
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.short-about {
+  margin-right: 10em;
+}
+
+.short-about,
+.short-contact {
+  line-height: 2em;
+}
+
+.short-about p,
+.short-contact p {
+  font-size: x-small;
+}
+
+.short-about a,
+.short-contact a {
+  text-decoration: none;
+}
+
+/*#endregion footer*/
+
+.burger {
+  display: none;
+}
+
+.display-none {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 85px;
+  }
+  .main-content {
+    flex-direction: column;
+  }
+  .container {
+    flex-direction: column;
+    padding: 0 1em;
+  }
+
+  .burger {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    height: 10vh;
+    background: white;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+  }
+
+  .burger h1,
+  .burger h4 {
+    padding-left: 0.5em;
+    opacity: 0.7;
+  }
+
+  .lines {
+    position: absolute;
+    top: 0.8em;
+    right: 5%;
+    cursor: pointer;
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background: black;
+    margin: 5px;
+  }
+
+  .header-wrap {
+    position: unset;
+  }
+
+  header {
+    position: fixed;
+    background: white;
+    padding: 1em 1em;
+    visibility: hidden;
+  }
+
+  header h1,
+  header h4 {
+    display: none;
+  }
+
+  .open {
+    visibility: visible;
+    top: 8%;
+    right: 0;
+  }
+
+  .about img {
+    margin-top: 2em;
+  }
+
+  footer {
+    padding: 0 1em;
+  }
+
+  .short-about {
+    margin-right: 5em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .events img {
+    display: none;
+  }
+
+  .facebook {
+    margin-bottom: 3em;
+  }
+}
