@@ -188,7 +188,12 @@ img {
 
 footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ac-wrap {
+  display: flex;
 }
 
 .short-about {
@@ -208,6 +213,11 @@ footer {
 .short-about a,
 .short-contact a {
   text-decoration: none;
+}
+
+.copyright {
+  font-size: xx-small;
+  margin-top: 5em;
 }
 
 /*#endregion footer*/
